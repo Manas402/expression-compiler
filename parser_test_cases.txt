@@ -1,0 +1,31 @@
+PARSER TEST CASES
+
+Expected VALID
+1. a
+2. true
+3. !a
+4. a && b
+5. a || b && c        (root OR; right child AND)
+6. (a || b) && c      (root AND; left child OR)
+7. a > 5 && b < 10
+8. !(x == y) || z != 0
+9. ((a))
+10. true || false && !false
+
+Expected INVALID (parser errors should be reported)
+1. [empty input]
+2. a && && b          (missing operand)
+3. a > 5 ||           (expression ends after operator)
+4. (a > 5             (missing closing parenthesis)
+5. a b                (unexpected token after expression)
+6. a < b < c          (chained relational operator)
+7. ()                 (empty parentheses)
+8. a && )             (unexpected closing parenthesis where operand expected)
+9. || a               (operator where operand expected)
+10. a >               (missing right operand)
+
+Integration checks
+- Enter each expression in index.html and press Compile & Analyze.
+- Confirm valid expressions display tokens and an AST with no parser error.
+- Confirm invalid expressions display a parser error and do not crash the page.
+- Also test a lexical error such as `a @ b`; the lexer should report the invalid character.

@@ -1,6 +1,0 @@
-{
-  "name": "boolean-expression-compiler",
-  "private": true,
-  "type": "module",
-  "scripts": { "test": "node --test js/lexer.test.js" }
-}

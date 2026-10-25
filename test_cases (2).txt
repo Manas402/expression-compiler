@@ -1,0 +1,17 @@
+Boolean Expression Compiler - starter test cases
+
+Valid examples to test:
+a > 5
+a > 5 && b < 10
+!(x == y) || z != 0
+(a > 5) && (b < 10)
+true
+false
+
+Invalid examples to test:
+a > && 10
+a > 5 ||
+(a > 5
+@a > 5
+
+Record expected and actual results during testing. Some invalid expressions may expose issues that need fixing.
